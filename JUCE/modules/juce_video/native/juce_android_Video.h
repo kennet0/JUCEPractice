@@ -2,15 +2,15 @@
   ==============================================================================
 
    This file is part of the JUCE library.
-   Copyright (c) 2020 - Raw Material Software Limited
+   Copyright (c) 2022 - Raw Material Software Limited
 
    JUCE is an open source library subject to commercial or open-source
    licensing.
 
-   By using JUCE, you agree to the terms of both the JUCE 6 End-User License
-   Agreement and JUCE Privacy Policy (both effective as of the 16th June 2020).
+   By using JUCE, you agree to the terms of both the JUCE 7 End-User License
+   Agreement and JUCE Privacy Policy.
 
-   End User License Agreement: www.juce.com/juce-6-licence
+   End User License Agreement: www.juce.com/juce-7-licence
    Privacy Policy: www.juce.com/juce-privacy-policy
 
    Or: You may also use this code under the terms of the GPL v3 (see
@@ -544,7 +544,7 @@ private:
 
         double getSpeed() const              { return controller.getPlaySpeed(); }
         Rectangle<int> getNativeSize() const { return player.getVideoNativeSize(); }
-        double getDuration() const           { return player.getVideoDuration() / 1000.0; }
+        double getDuration() const           { return (double) player.getVideoDuration() / 1000.0; }
 
         void setVolume (float newVolume)
         {
@@ -578,7 +578,7 @@ private:
             auto* env = getEnv();
 
             auto pos = env->CallLongMethod (storedPlaybackState, AndroidPlaybackState.getPosition);
-            setPosition (pos / 1000.0);
+            setPosition ((double) pos / 1000.0);
 
             setSpeed (playSpeedMult);
 
@@ -680,7 +680,7 @@ private:
                 auto playbackState = LocalRef<jobject> (env->CallObjectMethod (nativeController, AndroidMediaController.getPlaybackState));
 
                 if (playbackState != nullptr)
-                    return env->CallLongMethod (playbackState, AndroidPlaybackState.getPosition) / 1000.0;
+                    return (double) env->CallLongMethod (playbackState, AndroidPlaybackState.getPosition) / 1000.0;
 
                 return 0.0;
             }
@@ -705,7 +705,7 @@ private:
 
                 auto maxVolume = env->CallIntMethod (playbackInfo, AndroidMediaControllerPlaybackInfo.getMaxVolume);
 
-                auto targetVolume = jmin (jint (maxVolume * newVolume), maxVolume);
+                auto targetVolume = jmin (jint ((float) maxVolume * newVolume), maxVolume);
 
                 static constexpr jint flagShowUI = 1;
                 env->CallVoidMethod (nativeController, AndroidMediaController.setVolumeTo, targetVolume, flagShowUI);
@@ -720,7 +720,7 @@ private:
                 auto maxVolume = (int) (env->CallIntMethod (playbackInfo, AndroidMediaControllerPlaybackInfo.getMaxVolume));
                 auto curVolume = (int) (env->CallIntMethod (playbackInfo, AndroidMediaControllerPlaybackInfo.getCurrentVolume));
 
-                return static_cast<float> (curVolume) / maxVolume;
+                return static_cast<float> (curVolume) / (float) maxVolume;
             }
 
         private:
@@ -1716,9 +1716,7 @@ private:
         //==============================================================================
         void systemVolumeChanged()
         {
-            WeakReference<SystemVolumeListener> weakThis (this);
-
-            MessageManager::callAsync ([weakThis]() mutable
+            MessageManager::callAsync ([weakThis = WeakReference<SystemVolumeListener> { this }]() mutable
                                        {
                                            if (weakThis == nullptr)
                                                return;

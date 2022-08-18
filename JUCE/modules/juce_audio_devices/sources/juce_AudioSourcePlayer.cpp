@@ -2,7 +2,7 @@
   ==============================================================================
 
    This file is part of the JUCE library.
-   Copyright (c) 2020 - Raw Material Software Limited
+   Copyright (c) 2022 - Raw Material Software Limited
 
    JUCE is an open source library subject to commercial or open-source
    licensing.
@@ -63,7 +63,7 @@ void AudioSourcePlayer::audioDeviceIOCallback (const float** inputChannelData,
                                                int numSamples)
 {
     // these should have been prepared by audioDeviceAboutToStart()...
-//    jassert (sampleRate > 0 && bufferSize > 0);
+    jassert (sampleRate > 0 && bufferSize > 0);
 
     const ScopedLock sl (readLock);
 

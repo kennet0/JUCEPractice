@@ -2,15 +2,15 @@
   ==============================================================================
 
    This file is part of the JUCE library.
-   Copyright (c) 2020 - Raw Material Software Limited
+   Copyright (c) 2022 - Raw Material Software Limited
 
    JUCE is an open source library subject to commercial or open-source
    licensing.
 
-   By using JUCE, you agree to the terms of both the JUCE 6 End-User License
-   Agreement and JUCE Privacy Policy (both effective as of the 16th June 2020).
+   By using JUCE, you agree to the terms of both the JUCE 7 End-User License
+   Agreement and JUCE Privacy Policy.
 
-   End User License Agreement: www.juce.com/juce-6-licence
+   End User License Agreement: www.juce.com/juce-7-licence
    Privacy Policy: www.juce.com/juce-privacy-policy
 
    Or: You may also use this code under the terms of the GPL v3 (see
@@ -77,20 +77,21 @@ private:
     {
         showCorrectTab();
 
-        PaintElementPath* const path = getElement();
-        jassert (path != nullptr);
+        if (auto* const path = getElement())
+        {
+            if (auto* const p = path->getPoint (index))
+            {
+                const auto typeChanged = (p->type != value.type);
+                *p = value;
+                p->owner = path;
 
-        PathPoint* const p = path->getPoint (index);
-        jassert (p != nullptr);
+                if (typeChanged)
+                    path->pointListChanged();
 
-        const bool typeChanged = (p->type != value.type);
-        *p = value;
-        p->owner = path;
+                path->changed();
+            }
+        }
 
-        if (typeChanged)
-            path->pointListChanged();
-
-        path->changed();
         return true;
     }
 };
@@ -849,14 +850,15 @@ public:
     {
         showCorrectTab();
 
-        PaintElementPath* const path = getElement();
-        jassert (path != nullptr);
+        if (auto* const path = getElement())
+        {
+            if (auto* const p = path->addPoint (pointIndexToAddItAfter, false))
+            {
+                indexAdded = path->indexOfPoint (p);
+                jassert (indexAdded >= 0);
+            }
+        }
 
-        PathPoint* const p = path->addPoint (pointIndexToAddItAfter, false);
-        jassert (p != nullptr);
-
-        indexAdded = path->indexOfPoint (p);
-        jassert (indexAdded >= 0);
         return true;
     }
 
@@ -1012,6 +1014,12 @@ bool PaintElementPath::getPoint (int index, int pointNumber, double& x, double& 
         return false;
     }
 
+    if (pointNumber >= PathPoint::maxRects)
+    {
+        jassertfalse;
+        return false;
+    }
+
     jassert (pointNumber < 3 || p->type == Path::Iterator::cubicTo);
     jassert (pointNumber < 2 || p->type == Path::Iterator::cubicTo || p->type == Path::Iterator::quadraticTo);
 
@@ -1117,6 +1125,12 @@ void PaintElementPath::movePoint (int index, int pointNumber,
         jassert (pointNumber < 3 || p->type == Path::Iterator::cubicTo);
         jassert (pointNumber < 2 || p->type == Path::Iterator::cubicTo || p->type == Path::Iterator::quadraticTo);
 
+        if (pointNumber >= PathPoint::maxRects)
+        {
+            jassertfalse;
+            return;
+        }
+
         RelativePositionedRectangle& pr = newPoint.pos [pointNumber];
 
         double x, y, w, h;
@@ -1137,6 +1151,12 @@ void PaintElementPath::movePoint (int index, int pointNumber,
 
 RelativePositionedRectangle PaintElementPath::getPoint (int index, int pointNumber) const
 {
+    if (pointNumber >= PathPoint::maxRects)
+    {
+        jassertfalse;
+        return RelativePositionedRectangle();
+    }
+
     if (PathPoint* const p = points [index])
     {
         jassert (pointNumber < 3 || p->type == Path::Iterator::cubicTo);
@@ -1151,6 +1171,12 @@ RelativePositionedRectangle PaintElementPath::getPoint (int index, int pointNumb
 
 void PaintElementPath::setPoint (int index, int pointNumber, const RelativePositionedRectangle& newPos, const bool undoable)
 {
+    if (pointNumber >= PathPoint::maxRects)
+    {
+        jassertfalse;
+        return;
+    }
+
     if (PathPoint* const p = points [index])
     {
         PathPoint newPoint (*p);
@@ -1222,17 +1248,17 @@ public:
 
     int getIndex() const override
     {
-        const PathPoint* const p = owner->getPoint (index);
-        jassert (p != nullptr);
-
-        switch (p->type)
+        if (const auto* const p = owner->getPoint (index))
         {
-            case Path::Iterator::startNewSubPath:   return 0;
-            case Path::Iterator::lineTo:            return 1;
-            case Path::Iterator::quadraticTo:       return 2;
-            case Path::Iterator::cubicTo:           return 3;
-            case Path::Iterator::closePath:         break;
-            default:                                jassertfalse; break;
+            switch (p->type)
+            {
+                case Path::Iterator::startNewSubPath:   return 0;
+                case Path::Iterator::lineTo:            return 1;
+                case Path::Iterator::quadraticTo:       return 2;
+                case Path::Iterator::cubicTo:           return 3;
+                case Path::Iterator::closePath:         break;
+                default:                                jassertfalse; break;
+            }
         }
 
         return 0;

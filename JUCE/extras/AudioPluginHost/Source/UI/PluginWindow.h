@@ -2,15 +2,15 @@
   ==============================================================================
 
    This file is part of the JUCE library.
-   Copyright (c) 2020 - Raw Material Software Limited
+   Copyright (c) 2022 - Raw Material Software Limited
 
    JUCE is an open source library subject to commercial or open-source
    licensing.
 
-   By using JUCE, you agree to the terms of both the JUCE 6 End-User License
-   Agreement and JUCE Privacy Policy (both effective as of the 16th June 2020).
+   By using JUCE, you agree to the terms of both the JUCE 7 End-User License
+   Agreement and JUCE Privacy Policy.
 
-   End User License Agreement: www.juce.com/juce-6-licence
+   End User License Agreement: www.juce.com/juce-7-licence
    Privacy Policy: www.juce.com/juce-privacy-policy
 
    Or: You may also use this code under the terms of the GPL v3 (see
@@ -26,6 +26,20 @@
 #pragma once
 
 #include "../Plugins/IOConfigurationWindow.h"
+#include "../Plugins/ARAPlugin.h"
+
+inline String getFormatSuffix (const AudioProcessor* plugin)
+{
+    const auto format = [plugin]()
+    {
+        if (auto* instance = dynamic_cast<const AudioPluginInstance*> (plugin))
+            return instance->getPluginDescription().pluginFormatName;
+
+        return String();
+    }();
+
+    return format.isNotEmpty() ? (" (" + format + ")") : format;
+}
 
 class PluginGraph;
 
@@ -48,6 +62,12 @@ public:
             p->addListener (this);
 
         log.add ("Parameter debug log started");
+    }
+
+    ~PluginDebugWindow() override
+    {
+        for (auto* p : audioProc.getParameters())
+            p->removeListener (this);
     }
 
     void parameterValueChanged (int parameterIndex, float newValue) override
@@ -136,20 +156,24 @@ public:
         programs,
         audioIO,
         debug,
+        araHost,
         numTypes
     };
 
     PluginWindow (AudioProcessorGraph::Node* n, Type t, OwnedArray<PluginWindow>& windowList)
-       : DocumentWindow (n->getProcessor()->getName(),
-                         LookAndFeel::getDefaultLookAndFeel().findColour (ResizableWindow::backgroundColourId),
-                         DocumentWindow::minimiseButton | DocumentWindow::closeButton),
-         activeWindowList (windowList),
-         node (n), type (t)
+        : DocumentWindow (n->getProcessor()->getName() + getFormatSuffix (n->getProcessor()),
+                          LookAndFeel::getDefaultLookAndFeel().findColour (ResizableWindow::backgroundColourId),
+                          DocumentWindow::minimiseButton | DocumentWindow::closeButton),
+          activeWindowList (windowList),
+          node (n), type (t)
     {
         setSize (400, 300);
 
         if (auto* ui = createProcessorEditor (*node->getProcessor(), type))
+        {
             setContentOwned (ui, true);
+            setResizable (ui->isResizable(), false);
+        }
 
        #if JUCE_IOS || JUCE_ANDROID
         auto screenBounds = Desktop::getInstance().getDisplays().getTotalBounds (true).toFloat();
@@ -194,6 +218,16 @@ public:
     const AudioProcessorGraph::Node::Ptr node;
     const Type type;
 
+    BorderSize<int> getBorderThickness() override
+    {
+       #if JUCE_IOS || JUCE_ANDROID
+        const int border = 10;
+        return { border, border, border, border };
+       #else
+        return DocumentWindow::getBorderThickness();
+       #endif
+    }
+
 private:
     float getDesktopScaleFactor() const override     { return 1.0f; }
 
@@ -202,10 +236,21 @@ private:
     {
         if (type == PluginWindow::Type::normal)
         {
-            if (auto* ui = processor.createEditorIfNeeded())
-                return ui;
+            if (processor.hasEditor())
+                if (auto* ui = processor.createEditorIfNeeded())
+                    return ui;
 
             type = PluginWindow::Type::generic;
+        }
+
+        if (type == PluginWindow::Type::araHost)
+        {
+           #if JUCE_PLUGINHOST_ARA && (JUCE_MAC || JUCE_WINDOWS || JUCE_LINUX)
+            if (auto* araPluginInstanceWrapper = dynamic_cast<ARAPluginInstanceWrapper*> (&processor))
+                if (auto* ui = araPluginInstanceWrapper->createARAHostEditor())
+                    return ui;
+           #endif
+            return {};
         }
 
         if (type == PluginWindow::Type::generic)  return new GenericAudioProcessorEditor (processor);
@@ -226,6 +271,7 @@ private:
             case Type::programs:   return "Programs";
             case Type::audioIO:    return "IO";
             case Type::debug:      return "Debug";
+            case Type::araHost:    return "ARAHost";
             case Type::numTypes:
             default:               return {};
         }
@@ -287,7 +333,7 @@ private:
             }
 
             void refresh() override {}
-            void audioProcessorChanged (AudioProcessor*) override {}
+            void audioProcessorChanged (AudioProcessor*, const ChangeDetails&) override {}
             void audioProcessorParameterChanged (AudioProcessor*, int, float) override {}
 
             AudioProcessor& owner;
