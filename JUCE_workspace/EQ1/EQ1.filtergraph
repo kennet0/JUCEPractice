@@ -31,14 +31,14 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="6" x="0.455" y="0.3057692307692308" useARA="0" uiLastX_Normal="269"
-          uiLastY_Normal="446" uiopen_Normal="0">
+  <FILTER uid="6" x="0.4975" y="0.3192307692307692" useARA="0" uiLastX_Normal="269"
+          uiLastY_Normal="446" uiopen_Normal="1">
     <PLUGIN name="AUAudioFilePlayer" format="AudioUnit" category="Generator"
             manufacturer="Apple" version="1.6.0" file="AudioUnit:Generators/augn,afpl,appl"
-            uniqueId="6163676e" isInstrument="0" fileTime="0" infoUpdateTime="182b13943a7"
+            uniqueId="6163676e" isInstrument="0" fileTime="0" infoUpdateTime="1851fb4c640"
             numInputs="0" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="6163676e"/>
-    <STATE>558.hAGaoMGcv.C1AHv.DTfAGfPBJrfFavQGevUag4VclE1XzUmbkIGUjEFcg8EDarVPUAkbkMWYzAUYxMWZyQWYtQ2TzEFcksTY4c0b0IFc4AWYWYWYxMWZu4FUzkGbk8EDOXVZrUVKxUlYkIWYtMVYyQkag0VYRDFbvwFPgxvzM3vCPDQFXYTZrUlSg0VYWIUYmk1atMmWIM2TkwVYiQWYjYTZrU1WPn0KUMWYxM2KpElamgVXt8BQucmar8VXjM2K4ISagQWYtL1asARKfPEZkAxRoQFHLEjTOkDHJU2bzklafHTZkIVYxABHSQWX4AxSlYVZikVXrAhUoQVYu4RavMSnRL8DTTgEWfgVRU1Yo8laNEVakokTkcVZu4FQgQWXdIUYmk1atQzakMGSu8FbZ4TY2AhTkcVZu41SP.G...........9LiCK++A..f8rhB..X...X.Vl...F...9LiCK++A..f8rhB..X..P.uYmc.....D................................................................nqpA......HjfDgYFbrAA.RDVcm4Vzd.gUFkFakARLXUkazkFcrUFY.f..Y.fI.rB.IAPT.jE.dA.b.TG.5Avd.zG.DBPi.TI.jFP.ALP.JDPEA.R.uDfNAzZ.tFvqAPa.1FvtA3a.EC.......HP...........B..................Dfy</STATE>
+    <STATE>921.hAGaoMGcv.C1AHv.DTfAGfPBJr.IkXxIpvUag4VclE1XzUmbkIGUjEFcg8EDarVPUAkbkMWYzAUYxMWZyQWYtQ2TzEFcksTY4c0b0IFc4AWYWYWYxMWZu4FUzkGbk8EDOXVZrUVKxUlYkIWYtMVYyQkag0VYRDFbvwFPhxfFR2fCO.AVFkFak4TXsU1URU1Yo8lay8EDZ8RUyUlby8hZg41YnElauPza24FauEFYy8RdxzVXzUlKi8VafzBHTgVYfrTZjABSAI0SIAhR0MGco4FHBkVYhUlbf.xTzEVdf7jYlk1XoEFafXUZjU1atzFbyDZDTKwDTTgEWfQFdIUYmk1atQzakMGSu8FbZIUYmk1atQTXzE1WP.QRyMUYrU1XzUFYRU1Yo8laZIUYmk1at4TXsUFBOAAb...........3yLNr7+G...1yJJ..fA..fAXYB..X...3yLNr7+G...1yJJ..fA..A7lc1A....P................................................................ftpF......jfVNU1cfHUYmk1atMcCNrAGcfgWIM2TkwVYiQWYjYTZrU1aPDE.u.fU.7F.rAPc.zF.kAvb.7B.MAPX.LF.HA.Y.PF.u..Q.HG.uA.b.HF.uA.d.7B.w.fKQHQDmEwpQvPDhEACQDVDnFwBQTVD3BvK.DC.x.PL.LC.f.PK..RDKDgbQ.PDwAvK.LE.kAfa.PF.u.PL.HC.w.vL..B.s..HQrPDxEA.QDG.eAfR.fF.gAfa.zF.oA.d.DC.t..L.3B.2APX.XWndPsDSPQEV.BFhfvSP.G...........4py6sj+A..vlwrA..X...XlPT...F...4py6sj+A..vlwrA..X..P.8vSM.....D...............................................................fsWNB......InkSkcGHRU1Yo8laIHQXlAGaP.fDgU2YtIMJo7.GVYTZrUFHwXkQowVYfHCVU4FcoQGakQF.H.PF.XB.q.PR.DE.YAfW..G.0Afd.rG.9Avf.vH.TBP7.LO.7GvBAXQ.oD.MATS.nFPpAPa.6FfxB7l.wIfdBrm.tKv6Bnu.6O..CHv.GL.CCLw.Z........HP..........rB..................LvH</STATE>
     <LAYOUT>
       <INPUTS/>
       <OUTPUTS>
@@ -46,13 +46,13 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="15" x="0.525" y="0.5115384615384615" useARA="0" uiLastX_Normal="542"
-          uiLastY_Normal="369" uiopen_Normal="1">
-    <PLUGIN name="EQ1" format="AudioUnit" category="Effect" manufacturer="yourcompany"
-            version="1.0.0" file="AudioUnit:Effects/aufx,Pcu8,Manu" uniqueId="7c777d35"
-            isInstrument="0" fileTime="0" infoUpdateTime="182b13943a7" numInputs="2"
-            numOutputs="2" isShell="0" hasARAExtension="0" uid="7c777d35"/>
-    <STATE>261.hAGaoMGcv.y0AHv.DTfAGfPBJHwDTTAWsEla0YVXiQWcxUlbTQVXzEFWkwVYsUlaz0hag0VYWMWchQWdvU1U1Ulbyk1atQEc4AWYT4VXsUlDMEla08DDDA..............Gj.DiAA.....T.e2Y3y2XeNEwKAH+....zQUv3A.....cLcnkB....PHMgzb+.H..PyVp4aO55BiRu.CM.QTwDkLQ6vCQASUI4Fb0QWzNDgUOUGcvUGcR.0X0gCD.HQX0YFdXUkazkFcrUFYHbAIoXiOFsDTUwYniVJppB6r59avFC.......DP..........XA...................vy</STATE>
+  <FILTER uid="17" x="0.49625" y="0.5211538461538462" useARA="0" uiLastX_Normal="801"
+          uiLastY_Normal="299" uiopen_Normal="1">
+    <PLUGIN name="EQ3" format="AudioUnit" category="Effect" manufacturer="yourcompany"
+            version="1.0.0" file="AudioUnit:Effects/aufx,Cd0u,Manu" uniqueId="6f703878"
+            isInstrument="0" fileTime="0" infoUpdateTime="1851fb4c640" numInputs="2"
+            numOutputs="2" isShell="0" hasARAExtension="0" uid="6f703878"/>
+    <STATE>261.hAGaoMGcv.y0AHv.DTfAGfPBJHwDTTAWsEla0YVXiQWcxUlbTQVXzEFWkwVYsUlaz0hag0VYWMWchQWdvU1U1Ulbyk1atQEc4AWYT4VXsUlDMEla08DDDA..............Gj.DiAA.....T.e2Y3y2XeNEwKAH+....zQUv3A.....cLcnkB....PHMgzb+.H..PyVp4aO55BiRu.CM.QTwDkLQ6vCQASUI4Fb0QWzNDgUOUGcvUGcRLDYvTGD.HQX0YFdXUkazkFcrUFYHbAIoXiOFsDTUwYniVJppB6r59avFC.......DP..........XA...................vy</STATE>
     <LAYOUT>
       <INPUTS>
         <BUS index="0" layout="L R"/>
@@ -62,20 +62,8 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="16" x="0.73" y="0.4923076923076923" useARA="0" uiLastX_Normal="105"
-          uiLastY_Normal="243" uiopen_Normal="0">
-    <PLUGIN name="JhanEQ" format="AudioUnit" category="Effect" manufacturer="HanStudio"
-            version="1.0.0" file="AudioUnit:Effects/aufx,Jpyc,Manu" uniqueId="6664716e"
-            isInstrument="0" fileTime="0" infoUpdateTime="182b13943a7" numInputs="2"
-            numOutputs="2" isShell="0" hasARAExtension="0" uid="6664716e"/>
-    <STATE>638.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIQSg4VcOAAQ..............vAI.wXP......Ev2cF97M1mSQ7R.xO....cTELd.....PGSGZo.....DRSHM2O.B..zrkZ91ittvnzLzfCQDULQISzO.QTvTURtAWczE8CRX0S0QGb0QmDJAWdiAA.RDVclg2SQDvQPElbg0VYzUlbyA..Ab.TAIUPMAP.BjFY.DvCEfTZmgFTgM2bfXjbkEG.1EFa0UF.Aj.A.......vWAD.PEjTA0D.AHPZjAP.PT.RocFZPE1byAxTr8FbkAfcgwVckAP.IP.............TAIUPMAP.BjFY.DfCEvza2AUXyMGHFIWYwAfcgwVckAP.IP.......f3z.A.TAIUPMAP.BjFY.DvCEvza2AUXyMGHSw1avUF.1EFa0UF.Aj.A............PEjTA0D.AHPZjAP.KT.TkE1ZfXjbkEG.1EFa0UF.Aj.A......fQfBD.PEjTA0D.AHPZjAP.KT.TkE1ZfbTXo4F.1EFa0UF.Aj.A........v+C.PEjTA0D.AHPZjAP.NT.TkE1ZfDUcgwVZzkG.1EFa0UF.Aj.A........j.D.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.r.TK.2BPt.vK.9B.w.bL.NCvz.TM.ZKPI........BD..........X...................B3B</STATE>
-    <LAYOUT>
-      <INPUTS>
-        <BUS index="0" layout="L R"/>
-      </INPUTS>
-      <OUTPUTS>
-        <BUS index="0" layout="L R"/>
-      </OUTPUTS>
-    </LAYOUT>
-  </FILTER>
+  <CONNECTION srcFilter="6" srcChannel="0" dstFilter="17" dstChannel="0"/>
+  <CONNECTION srcFilter="6" srcChannel="1" dstFilter="17" dstChannel="1"/>
+  <CONNECTION srcFilter="17" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="17" srcChannel="1" dstFilter="3" dstChannel="1"/>
 </FILTERGRAPH>

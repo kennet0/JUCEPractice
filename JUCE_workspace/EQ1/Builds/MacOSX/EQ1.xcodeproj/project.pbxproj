@@ -29,7 +29,6 @@
 		1DD6CAF12CEC6BB39B53ED15 /* CoreMIDI.framework */ = {isa = PBXBuildFile; fileRef = 59F86D194EEDD83D2B867CB0; };
 		20152FA74E7C9350CB70A068 /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXBuildFile; fileRef = BD3154755106C3D8069895FD; };
 		20F53D403454C8BCB4E921C9 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = 135F73386F5DB40296B2DD7D; };
-		21432977EB2A49239BF4D805 /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXBuildFile; fileRef = 53AB94A64299EE6BCC414421; };
 		2FFF761FAF63E828AD751458 /* include_juce_audio_plugin_client_utils.cpp */ = {isa = PBXBuildFile; fileRef = 9355DA95DB73C59F867E0C8E; };
 		3D3E776F63486AAE25A7ACC7 /* PluginEditor.cpp */ = {isa = PBXBuildFile; fileRef = 018BCE74AB1F8C3838349868; };
 		3D6D5679BBA3999BCF49A965 /* include_juce_dsp.mm */ = {isa = PBXBuildFile; fileRef = FA914A1E35016C7DAD548781; };
@@ -93,7 +92,6 @@
 		464465E7645276E85EF2DDD7 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
 		47ABFB4AA6754C253A51F71C /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
 		4BA7C78DBC9F684D489AE636 /* include_juce_audio_plugin_client_ARA.cpp */ /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_ARA.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_ARA.cpp; sourceTree = SOURCE_ROOT; };
-		53AB94A64299EE6BCC414421 /* include_juce_audio_plugin_client_AU.r */ /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXFileReference; lastKnownFileType = file.r; name = include_juce_audio_plugin_client_AU.r; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU.r; sourceTree = SOURCE_ROOT; };
 		59F503DE3AEEBE542E719921 /* DiscRecording.framework */ /* DiscRecording.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = System/Library/Frameworks/DiscRecording.framework; sourceTree = SDKROOT; };
 		59F86D194EEDD83D2B867CB0 /* CoreMIDI.framework */ /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		6592FC796AEEF234DA3745D4 /* include_juce_audio_basics.mm */ /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
@@ -259,7 +257,6 @@
 				6B218DC732CEA129AF214CC0,
 				8E841BFC7FEC65DF184AA3EE,
 				4BA7C78DBC9F684D489AE636,
-				53AB94A64299EE6BCC414421,
 				3DEA443A995F78F828635377,
 				942AAF2A16D0B48BC107C722,
 				B3012790568E5A78135D6C10,
@@ -337,7 +334,6 @@
 			buildConfigurationList = EFC7A72E27EC9FE3DFBA7790;
 			buildPhases = (
 				D5C17C4F45C05E3D76100CD0,
-				C540ECAF76A1BBD777BD77A1,
 				4ABCEB0ADF274FC79F13B243,
 				D950DC3BD045227CA2C4BBA3,
 			);
@@ -555,17 +551,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXRezBuildPhase section */
-		C540ECAF76A1BBD777BD77A1 = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				21432977EB2A49239BF4D805,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0EA24560A85D22A4544266B6 = {
 			isa = PBXSourcesBuildPhase;
@@ -674,7 +659,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -706,7 +690,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -718,7 +701,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -795,13 +778,13 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
 				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
@@ -816,7 +799,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -828,7 +810,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -905,14 +887,14 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
 				INFOPLIST_PREPROCESS = NO;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
@@ -924,7 +906,7 @@
 		385EC58855B2E2E2EC2C3757 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -935,7 +917,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -947,7 +928,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1025,13 +1006,13 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
@@ -1044,7 +1025,7 @@
 		4DC17198CEBAC8A32E6D1426 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1055,7 +1036,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1069,7 +1049,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1147,7 +1127,7 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-AU.plist;
@@ -1155,8 +1135,8 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-bundle -lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
@@ -1173,7 +1153,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1187,7 +1166,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1265,15 +1244,15 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-AU.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-bundle -lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
@@ -1290,7 +1269,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1304,7 +1282,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1382,7 +1360,7 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-VST3.plist;
@@ -1390,8 +1368,8 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-bundle -lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
@@ -1407,7 +1385,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1421,7 +1398,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1499,15 +1476,15 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-VST3.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-bundle -lEQ1 -weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
@@ -1539,7 +1516,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -1572,7 +1548,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1584,7 +1559,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70002",
+					"JUCE_PROJUCER_VERSION=0x70003",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1662,12 +1637,12 @@
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules",
-					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client",
+					"/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "/Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules /Users/janghan/Desktop/GitHubDesktop/JUCEPractice/JUCE/modules/juce_audio_plugin_client/AU";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.EQ1;
 				PRODUCT_NAME = "EQ1";
